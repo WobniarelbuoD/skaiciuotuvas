@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 #vaizdas{
   border: 1px solid black;
   height:50px;
@@ -46,35 +47,43 @@
   padding-bottom: 10px;
   background-color: white;
 }
+
 #vaizdas span{
 color:lightgray;
 font-size: 20px;
 }
+
 #batonai table tr button{
   font-size: 3rem;
   padding: 0;
   margin: 0;
   width: 30%;
 }
+
 #batonai table tr:first-child button{
 width:13.6%;
 font-size: 1.1rem;
 padding:5px;
 }
+
 #batonai table tr:last-child button:nth-child(1){
   width:20%
 }
+
 #batonai table tr:last-child button:nth-child(2){
   width:20%
 }
+
 #batonai table tr:last-child button:last-child{
   width:50%
 }
+
 #batonai table{
   display:flex;
   justify-content: space-between;
   flex-direction: column;
 }
+
 #centras{
 position:absolute;
 left:40%;

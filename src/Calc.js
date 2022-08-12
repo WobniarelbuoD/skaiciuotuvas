@@ -6,6 +6,20 @@ const [result, setResult] = useState("");
 
 const ops = ['/', '*', '+', '-', '.'];
 
+// const row =[
+//     ["*", "/", "+", "-"],
+//     ["7", "8", "9"],
+//     ["4","5","6"],
+//     ["1", "2", "3"],
+//     ["0", "."],
+// ]
+
+const Button = ({thing}) =>{
+    return(
+    <button onClick={e => updateCalc(e.target.textContent)} className={"btn btn-primary m-1"}>{thing}</button>
+    )
+}
+
     const updateCalc = value =>{
         if(ops.includes(value) && calc === '' || ops.includes(value) && ops.includes(calc.slice(-1))){
             return;
@@ -24,9 +38,8 @@ const ops = ['/', '*', '+', '-', '.'];
 
     const del = () =>{
         const value = ""
-        const boop = ""
         setCalc(value)
-        setResult(boop)
+        setResult(value)
     }
 
     const deleteLast = () =>{
@@ -49,42 +62,45 @@ const ops = ['/', '*', '+', '-', '.'];
                 <table>
 
                 <tr>
-                <button onClick={() => updateCalc('*')} className={"btn btn-primary m-1"} id={""}>*</button>
-                <button onClick={() => updateCalc('/')} className={"btn btn-primary m-1"} id={""}>/</button>
-                <button onClick={() => updateCalc('+')} className={"btn btn-primary m-1"} id={""}>+</button>
-                <button onClick={() => updateCalc('-')} className={"btn btn-primary m-1"} id={""}>-</button>
-                <button onClick={del} className={"btn btn-primary m-1"} id={""}>C</button>
-                <button onClick={deleteLast} className={"btn btn-primary m-1"} id={""}>Del</button>
+                <Button thing={"*"}/>
+                <Button thing={"/"}/>
+                <Button thing={"+"}/>
+                <Button thing={"-"}/>
+                <button onClick={del} className={"btn btn-primary m-1"}>C</button>
+                <button onClick={deleteLast} className={"btn btn-primary m-1"}>Del</button>
                 </tr>
 
                 <tr>
-                <button onClick={() => updateCalc('7')} className={"btn btn-primary m-1"} id={""}>7</button>
-                <button onClick={() => updateCalc('8')} className={"btn btn-primary m-1"} id={""}>8</button>
-                <button onClick={() => updateCalc('9')} className={"btn btn-primary m-1"} id={""}>9</button>
+                <Button thing={"7"}/>
+                <Button thing={"8"}/>
+                <Button thing={"9"}/>
                 </tr>
 
                 <tr>
-                <button onClick={() => updateCalc('4')} className={"btn btn-primary m-1"} id={""}>4</button>
-                <button onClick={() => updateCalc('5')} className={"btn btn-primary m-1"} id={""}>5</button>
-                <button onClick={() => updateCalc('6')} className={"btn btn-primary m-1"} id={""}>6</button>
+                <Button thing={"4"}/>
+                <Button thing={"5"}/>
+                <Button thing={"6"}/>
                 </tr>
 
                 <tr>
-                <button onClick={() => updateCalc('1')} className={"btn btn-primary m-1"} id={""}>1</button>
-                <button onClick={() => updateCalc('2')} className={"btn btn-primary m-1"} id={""}>2</button>
-                <button onClick={() => updateCalc('3')} className={"btn btn-primary m-1"} id={""}>3</button>
+                <Button thing={"1"}/>
+                <Button thing={"2"}/>
+                <Button thing={"3"}/>
                 </tr>
 
                 <tr>
-                    <button onClick={() => updateCalc('0')} className={"btn btn-primary m-1"}>0</button>
-                    <button onClick={() => updateCalc('.')} className={"btn btn-primary m-1"}>.</button>
+                <Button thing={"0"}/>
+                <Button thing={"."}/>
                     <button onClick={calculate} className={"btn btn-primary m-1"}>SUM</button>
                 </tr>
 
                 </table>
             </div>
+            <script src="bower_components/dist/number-to-text.js"></script>
+
         </div>
     )
 }
+console.log(numberToText.convertToText(123456));
 
 export default Calculator
